@@ -1,3 +1,7 @@
+"use client"
+import { gql } from "@apollo/client";
+import { useMutation } from '@apollo/client';
+import { redirect } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,10 +14,26 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export const description =
-  "A simple login form with email and password. The submit button says 'Sign in'."
-
 export function LoginForm() {
+  
+  const MYPROFILE = gql`
+    mutation {
+      login(email: "john@mail.com", password: "changeme") {
+        access_token
+        refresh_token
+      }
+    }
+  `;
+
+  const [addTodo, { data, loading, error }] = useMutation(MYPROFILE);
+  // let acesstoken = data.login.access_token
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+  if (data) 
+    
+  return redirect("/dashboard");
+    
+
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
@@ -33,7 +53,12 @@ export function LoginForm() {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Sign in</Button>
+        <Button
+        onClick={e => {
+          e.preventDefault();
+          addTodo();          
+        }} 
+        className="w-full">Sign in</Button>
       </CardFooter>
     </Card>
   )
