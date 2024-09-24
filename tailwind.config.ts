@@ -10,8 +10,13 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
+  			background: '#F0F3F8',
+  			foreground: '#FCFCFE',
+			bluish: '#DAE6F2',
+			link: '#3758AB',
+			icon: '#1C3144',
+			grey: '#7C96B1',
+			
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -25,7 +30,7 @@ const config: Config = {
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
+  				DEFAULT: '#DAE6F2',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {

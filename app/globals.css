@@ -16,7 +16,7 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: #F0F3F8;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -25,15 +25,22 @@ body {
     text-wrap: balance;
   }
 
+  .psmall {
+    text: 14px;
+  }
+
   .center {
     @apply flex justify-center items-center;
+  }
+  .time_card {
+    @apply bg-background w-[264px] h-[138px] rounded-[8px] flex flex-col items-center justify-center;
   }
 }
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: ;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;

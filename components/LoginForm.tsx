@@ -29,9 +29,10 @@ export function LoginForm() {
   // let acesstoken = data.login.access_token
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
-  if (data) 
-    
-  return redirect("/dashboard");
+  if (data) return <p>{data.login.access_token}</p>
+
+
+    // return redirect("/dashboard");
     
 
   return (
