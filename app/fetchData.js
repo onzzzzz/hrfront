@@ -3,7 +3,7 @@ import { useDataTokenStore } from '@/lib/store'
 
 export const fetchData = () => {
 
-    const token = useDataTokenStore((state) => state.token )
+    const Token = useDataTokenStore((state) => state.token )
 
     const MYNAME = gql `
         query {
@@ -18,7 +18,7 @@ export const fetchData = () => {
     const {loading, error, data } = useQuery(MYNAME, {
         context: {
             headers: {
-                "Authorization": `Bearer ${token}`
+                "Authorization": `Bearer ${Token}`
             }
         }
     });

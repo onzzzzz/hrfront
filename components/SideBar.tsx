@@ -5,10 +5,9 @@ import { CircleUserRound, Clock4, Earth, Facebook, Globe, Hash, Linkedin, Mail, 
 import user from '../const/data'
 import { fetchData } from '@/app/fetchData';
 
-
 const SideBar = () => {
 
-  const avatar: string[] = fetchData()
+  const avatar: any = fetchData()
 
   return (
     <div className='absolute flex flex-col align-middle items-center' >

@@ -8,7 +8,7 @@ interface AuthStore {
     // token: any;
 }
 
-var userLocalStorage 
+let userLocalStorage 
 
 
 const useAuthStore = create(

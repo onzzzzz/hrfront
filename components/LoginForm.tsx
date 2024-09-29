@@ -15,7 +15,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useAuthStore } from "@/app/useAuthStore";
 import { useDataTokenStore } from '@/lib/store'
-import { fetchData } from "@/app/fetchData";
 
 export function LoginForm() {
 

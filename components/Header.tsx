@@ -12,7 +12,7 @@ import { fetchData } from '@/app/fetchData'
 
 const Header = () => {
 
-  const name: string[] = fetchData()
+  const name: any = fetchData()
 
   return (
     <div

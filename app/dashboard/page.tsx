@@ -5,7 +5,6 @@ import Nav from "@/components/Nav";
 import Header from "@/components/Header";
 import SideBar from "@/components/SideBar";
 import Info from "@/components/Info";
-import { useEffect } from "react";
 
 const page = () => {
 
