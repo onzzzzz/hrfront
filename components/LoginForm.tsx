@@ -13,8 +13,13 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useAuthStore } from "@/app/useAuthStore";
+import { useDataTokenStore } from '@/lib/store'
+import { fetchData } from "@/app/fetchData";
 
 export function LoginForm() {
+
+  const getToken = useDataTokenStore((state) => state.getToken )
   
   const MYPROFILE = gql`
     mutation {
@@ -26,14 +31,18 @@ export function LoginForm() {
   `;
 
   const [addTodo, { data, loading, error }] = useMutation(MYPROFILE);
-  // let acesstoken = data.login.access_token
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-  if (data) return <p>{data.login.access_token}</p>
+  const {login} = useAuthStore()
 
-
-    // return redirect("/dashboard");
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+    if (data) {
     
+    login();
+    getToken(data.login.access_token)
+     
+    return redirect("/dashboard")
+    
+  }     
 
   return (
     <Card className="w-full max-w-sm">

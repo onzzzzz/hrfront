@@ -5,13 +5,12 @@ import {
   Search,
   Settings
 } from "lucide-react"
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-
 import { Input } from "@/components/ui/input"
 import { Button } from './ui/button'
 
 const Nav = () => {
+
   return (
     <div
     className='h-[86px] w-full  flex pt-[32px] px-[24px] justify-between z-0 bg-foreground'>

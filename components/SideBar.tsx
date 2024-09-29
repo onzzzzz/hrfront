@@ -3,26 +3,23 @@ import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { CircleUserRound, Clock4, Earth, Facebook, Globe, Hash, Linkedin, Mail, MapPin, Phone, Twitter, UserCircle, UsersRound } from 'lucide-react';
 import user from '../const/data'
+import { fetchData } from '@/app/fetchData';
+
+
 const SideBar = () => {
 
-  console.log(user.report)
-  const listItems = user.report.map((name) =>
-    <div className='flex gap-[8px]  flex-row  '>
-              <Clock4 className='w-[16px] h-[16px]'/>
-              <p className='psmall' >{name}</p>
-          </div>
-  ); 
+  const avatar: string[] = fetchData()
 
   return (
     <div className='absolute flex flex-col align-middle items-center' >
 
       <Avatar className='absolute ml-[72px] w-[150px] h-[150px] mt-[-140px] z-50'>
-        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarImage src={avatar[1]} />
         <AvatarFallback>Av</AvatarFallback>
       </Avatar>
     
       <div
-      className='  flex flex-col w-[225px] ml-[72px] gap-[16px] '
+      className=' hidden md:flex flex-col w-[225px] ml-[72px] gap-[16px]  '
       >
         <div className='bg-foreground  flex flex-col p-[24px] gap-[16px] rounded-[16px] '>
           <div className='flex gap-[8px]  flex-row  '>
@@ -83,9 +80,9 @@ const SideBar = () => {
               <p className='psmall ' >Direct Reports</p>
           
           {user.report.map((name) =>
-            <div className='flex items-center gap-[8px]  flex-row  '>
+            <div key={name} className='flex items-center gap-[8px]  flex-row  '>
               <Clock4 className='w-[16px] h-[16px]'/>
-              <p  key={name} className='psmall' >{name}</p>
+              <p className='psmall' >{name}</p>
             </div>
 
           )}

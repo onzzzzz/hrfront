@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button } from './ui/button'
 import {
   Select,
@@ -8,15 +7,19 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Settings } from 'lucide-react'
+import { fetchData } from '@/app/fetchData'
 
 
 const Header = () => {
+
+  const name: string[] = fetchData()
+
   return (
     <div
     className='bg-secondary flex flex-col h-[200px] w-screen pl-[322px] pe-[72px] z-0 '>
       <div
       className='flex  h-full items-center justify-between '>
-        <h1 className='text-3xl font-semibold'>Alexandra Kuibyshevskaya</h1>
+        <h1 className='text-3xl font-semibold'>{name[0]}</h1>
       <div
       className=' flex gap-[8px]'
       >

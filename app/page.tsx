@@ -6,10 +6,12 @@ import { LoginForm } from "@/components/LoginForm";
 
 export default function Home() {
   return (
-    <ApolloProvider client={client}>
-      <main className="center h-screen">
-        <LoginForm />
-      </main>
-    </ApolloProvider>
+    
+      <ApolloProvider client={client}>
+        <main className="center h-screen">
+          <LoginForm />
+        </main>
+      </ApolloProvider>
+    
   );
 }
