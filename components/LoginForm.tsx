@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useAuthStore } from "@/app/useAuthStore";
+// import { useAuthStore } from "@/app/useAuthStore";
 import { useDataTokenStore } from '@/lib/store'
 
 export function LoginForm() {
@@ -30,13 +30,13 @@ export function LoginForm() {
   `;
 
   const [addTodo, { data, loading, error }] = useMutation(MYPROFILE);
-  const {login} = useAuthStore()
+  // const {login} = useAuthStore()
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
     if (data) {
     
-    login();
+    // login();
     getToken(data.login.access_token)
      
     return redirect("/dashboard")

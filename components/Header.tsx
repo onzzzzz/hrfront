@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Settings } from 'lucide-react'
-import { fetchData } from '@/app/fetchData'
+import { fetchData } from '@/app/FetchData'
 
 
 const Header = () => {

@@ -1,13 +1,17 @@
 
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { CircleUserRound, Clock4, Earth, Facebook, Globe, Hash, Linkedin, Mail, MapPin, Phone, Twitter, UserCircle, UsersRound } from 'lucide-react';
+import { Clock4, Facebook, Globe, Hash, Linkedin, Mail, MapPin, Phone, Twitter, UserCircle, UsersRound } from 'lucide-react';
 import user from '../const/data'
-import { fetchData } from '@/app/fetchData';
+import { FetchData } from '@/app/FetchData';
+
+// interface SideBar{
+//   avatar: any[]
+// }
 
 const SideBar = () => {
 
-  const avatar: any = fetchData()
+  const avatar = FetchData()
 
   return (
     <div className='absolute flex flex-col align-middle items-center' >
