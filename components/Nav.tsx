@@ -8,8 +8,11 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Button } from './ui/button'
+import { FetchData } from '@/app/FetchData';
 
 const Nav = () => {
+
+  const avatar = FetchData()
 
   return (
     <div
@@ -42,7 +45,7 @@ const Nav = () => {
         <CircleHelp />
         <Bell />
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarImage src={avatar[1]} />
           <AvatarFallback>Av</AvatarFallback>
         </Avatar>
       </div>

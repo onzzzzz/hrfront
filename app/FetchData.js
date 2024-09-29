@@ -27,14 +27,14 @@ export const FetchData = () => {
         }
     });
 
-    // if (loading) return <p>Loading...</p>;
-    // if (error) return <p>Error: {error.message}</p>;
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
     if (data) {
         const a = data.myProfile.name
         const b = data.myProfile.avatar
         let ab = [a, b]
         // getName(data.myProfile.name)
         // getAvatar(data.myProfile.avatar)
-        return ab
+        return [a, b]
     }
 }

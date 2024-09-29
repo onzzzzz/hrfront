@@ -7,12 +7,12 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Settings } from 'lucide-react'
-import { fetchData } from '@/app/FetchData'
+import { FetchData } from '@/app/FetchData'
 
 
 const Header = () => {
 
-  const name: any = fetchData()
+  const name = FetchData()
 
   return (
     <div
